@@ -5,35 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
-    <script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-  
-
+     <h1>Hangman</h1><br>
+     <h4 id="subTitle">Guess letters to guess what word I'm thinking about . .</h4><br>
+     <h3 id="winsText">Wins: <span id="winNums">0</span></h3>
+     <h3 id="lossesText">Losses: <span id="lossNums"></span>0</h3><br>
+     <h4 id="guessesLeftText">Letters Guessed So Far: <span id="guessesLeft"></span></h4>
+     <button id="btnE">EASY</button>
+     <button id="btnM">MEDIUM</button>
+     <button id="btnH">HARD</button>
+     
 
     <script>
          
         $(document).ready(function(){
 
-        //   What variable will you use
-          var wins = 0;
-          var losses = 0;
-          var letters = "";
-          var guessed = 15;
-          
-
-        //   What arrays will you use . .
-          var easy = [];
-          var medium = [];
-          var hard = [];
-
         //   Create a function onkeyup . . and userInput event.key
+            document.onkeyup(function(event){
+              let userInput = event.key;
+
+             //   What variable will you use
+              let wins = 0;
+              let losses = 0;
+              let letters = "";
+              let guessed = 15;
+              //   What arrays will you use . .
+              let easy = ["hat", "cat", "bat", "cow", "pig"];
+              let medium = ["water", "bottle", "laptop", "chair", "board"];
+              let hard = ["computer", "jackets", "keyboard", "notebook", "instructor"];
+              //   What variables you need to pull from Element IDs . .
+              let winsText = document.getElementById("winsText");
+              let winNums = document.getElementById("winNums");
+              let lossesText = document.getElementById("lossesText");
+              let lossNums = document.getElementById("lossNums");
+              let guessesLeftText = document.getElementById("guessesLeftText");
+              let guessesLeft = document.getElementById("guessesLeft");
+              //   Create your random functions . .
+              let randomEasy = function(){
+                return Math.floor(Math.random() * easy.length)
+              }
+              let randomMedium = function(){
+                return Math.floor(Math.random() * medium.length)
+              }
+              let randomHard = function(){
+                return Math.floor(Math.random() * hard.length)
+              }
+              //   You will need to first ask if the player wants to play on Easy, Medium, OR Hard . .
 
 
-        //   How will you pick your random word . . random function
+              // Then you will need an if statement according to which level they pick to play at . .
 
 
-        //   set variable for random function
+              // 
+
+              
+
+
+
+              // Text to diplay on webpage . .
+              winsText.textContent = "";
+              winsNums.textContent = wins;
+              lossesText.textContent = "";
+              lossNums.textContent = losses;
+              guessesLeftText.textContent = "";
+              guessesLeft.textContent = guessed;
+            
+
+            
+
+
+            });
+
 
 
         //   create a for loop .. display underscore equal to length of word .. placeholder
